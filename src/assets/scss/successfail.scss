@@ -1,0 +1,29 @@
+/* MessageComponent.css */
+.message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    z-index: 99999999999;
+}
+  
+.success {
+    background-color: #4caf50;
+}
+  
+.failure {
+    background-color: #f44336;
+}
+  
+.close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: inherit;
+}
+  

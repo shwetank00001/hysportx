@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 // import Breadcrumb from 'components/Common/Breadcrumb'
 import Breadcrumb from '../../components/Common/Breadcrumb'
-import { Button, Card, CardBody, CardTitle, Col, Container, Form, FormGroup, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader, Nav, NavItem, NavLink, Row, Spinner, TabContent, TabPane } from 'reactstrap';
+import { Button, Card, CardBody, CardText, CardTitle, Col, Container, Form, FormGroup, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader, Nav, NavItem, NavLink, Row, Spinner, TabContent, TabPane } from 'reactstrap';
 import classNames from 'classnames';
 import Select from "react-select";
 import { Await, Link, Route, redirect, useNavigate } from 'react-router-dom';
+import TableContainer from 'components/Common/TableContainer';
 
 
 
 function index() {
 
 
-  const navigate = useNavigate();
-     const [loading, setLoading] = useState(true)
+     const navigate = useNavigate();
+     const [loading, setLoading] = useState(false)
     const [activeTabVartical, setoggleTabVertical] = useState(1)
     const [passedStepsVertical, setPassedStepsVertical] = useState([1])
     const [modal, setmodal] = useState(false);
@@ -21,6 +22,7 @@ function index() {
     const [modal3, setmodal3] = useState(false);
     const [modal4, setmodal4] = useState(false);
     const [modal5, setmodal5] = useState(false);
+    const [modal6, setmodal6] = useState(false);
     const [selectedMulti, setselectedMulti] = useState(null);
     const [activeTab, setactiveTab] = useState(1);
     const [verticalActiveTab, setverticalActiveTab] = useState("1");
@@ -48,20 +50,20 @@ function index() {
   }, [])
   
  function loadings(){
-    if( localStorage.getItem('_token') != 'null'){
+    // if( localStorage.getItem('_token') != 'null'){
     
-      if( localStorage.getItem('_token') == '11111'){
-        window.location.href ="https://hysprtsx.com"
-        setLoading(false)
-      }else{
-        setLoading(false)
-        window.location.href ="https://fittestwarrior.com/front/#/login";  
-      }
-    }
-    if(localStorage.getItem('_token') == 'null'){
-      window.location.href ="https://fittestwarrior.com/front/#/login";
+    //   if( localStorage.getItem('_token') == '11111'){
+    //     window.location.href ="https://hysprtsx.com"
+    //     setLoading(false)
+    //   }else{
+    //     setLoading(false)
+    //     window.location.href ="https://fittestwarrior.com/front/#/login";  
+    //   }
+    // }
+    // if(localStorage.getItem('_token') == 'null'){
+    //   window.location.href ="https://fittestwarrior.com/front/#/login";
 
-    }
+    // }
   }
 
  const nav =[
@@ -102,6 +104,67 @@ function index() {
       ]
     },
 ]
+
+
+const columns = useMemo(
+  () => [
+      {
+          Header: 'ID',
+          accessor: 'id',
+      },
+      {
+          Header: ' Name',
+          accessor: 'name',
+      },
+      {
+          Header: 'Code',
+          accessor: 'code'
+      },
+      {
+          Header: 'Link',
+          accessor: 'link'
+      },
+      {
+          Header: 'Description',
+          accessor: 'description'
+      },
+      {
+          Header: 'Action',
+          accessor: 'action'
+      },
+      
+  ],
+  []
+);
+
+const data = [
+  {  id:'1',
+      name: "Jennifer Chang",
+      code: "Regional Director",
+      link: 28,
+      Description: "Singapore hfhfhfhhfhfh",
+      action: "2010/11/14"
+  },
+  {  id:'1',
+      name: "Jennifer Chang",
+      code: "Regional Director",
+      link: 28,
+      Description: "Singapore hfhfhfhhfhfh",
+      action: "2010/11/14"
+  },
+  {  id:'1',
+      name: "Jennifer Chang",
+      code: "Regional Director",
+      link: 28,
+      Description: "Singapore hfhfhfhhfhfh",
+      action: "2010/11/14"
+  },
+
+
+];
+
+
+ 
  const performncetag = [
     {
       label: "Picnic",
@@ -938,6 +1001,66 @@ function index() {
                   </ModalFooter>
                 </div>
               </Modal>
+              <Modal
+                isOpen={modal6}
+                autoFocus={true}
+                centered={true}
+                toggle={() => {
+                  setmodal6(!modal6);
+                } }
+              >
+                <div className="modal-content">
+                  <ModalHeader
+                    toggle={() => {
+                      setmodal6(!modal6);
+                    } }
+                  >
+                    Manage Shortcut
+                  </ModalHeader>
+                  <ModalBody>
+                    <form>
+                      <div className="mb-3">
+                        <Input
+                          type="email"
+                          className="form-control"
+                          placeholder="Short Name" />
+                      </div>
+                      <div className="mb-3">
+                        <Input
+                          type="email"
+                          className="form-control"
+                          placeholder="Term Name" />
+                      </div>
+                      <div className="mb-3">
+                        <Input
+                          type="email"
+                          className="form-control"
+                          placeholder="Description" />
+                      </div>
+                    </form>
+                  </ModalBody>
+                  <ModalFooter className=''>
+                    <Col className='text-center'>
+                    <Button
+                      type="button"
+                      className='col-sm-12 btn-soft-secondary'
+                      color="secondary"
+                      onClick={() => {
+                        setmodal6(!modal6);
+                      } }
+                      >
+                      Cancel
+                    </Button>
+                      </Col>
+                      <Col className='text-center'>
+                    <Button className='col-sm-12 btn-soft-info' type="button" color="primary" onClick={() => setmodal6(!modal6)}>
+                      ADD
+
+                    </Button>
+                      </Col>
+                  </ModalFooter>
+                </div>
+              </Modal>
             </Row><Row>
                 <Col lg="12">
                   <Card>
@@ -1314,20 +1437,6 @@ function index() {
 
                                     <Row className="justify-content-start">
                                       <Col sm={8}>
-                                        {/* <div className="form-check mb-4">
-      <Input
-        type="checkbox"
-        className="form-check-Input"
-        id="horizontal-customCheck"
-      />
-      <Label
-        className="form-check-label"
-        htmlFor="horizontal-customCheck"
-      >
-        Remember me
-      </Label>
-    </div> */}
-
                                         <div>
                                           <Button
                                             type="submit"
@@ -1344,91 +1453,27 @@ function index() {
                               </Card>
                             </TabPane>
                             <TabPane tabId={2}>
-                              <div>
-                                <Form>
-                                  <Row>
-                                    <Col lg="6">
-                                      <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-pancard-input52">
-                                          PAN Card
-                                        </Label>
-                                        <Input
-                                          type="text"
-                                          className="form-control"
-                                          id="basicpill-pancard-input52"
-                                          placeholder="Enter Your PAN Card No." />
-                                      </FormGroup>
-                                    </Col>
+                              <Card>
+                                <CardTitle className='d-flex'>
+                                  <Col sm={6}>Hypersports Conditions</Col>
+                                  <Col sm={6} onClick={()=>setmodal6(!modal6)} className='text-end'><Button color='secondary'>+ Add New</Button></Col>
+                                </CardTitle>
+                                <CardText>
 
-                                    <Col lg="6">
-                                      <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-vatno-input62">
-                                          VAT/TIN No.
-                                        </Label>
-                                        <Input
-                                          type="text"
-                                          className="form-control"
-                                          id="basicpill-vatno-input62"
-                                          placeholder="Enter Your VAT/TIN No." />
-                                      </FormGroup>
-                                    </Col>
-                                  </Row>
-                                  <Row>
-                                    <Col lg="6">
-                                      <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-cstno-input72">
-                                          CST No.
-                                        </Label>
-                                        <Input
-                                          type="text"
-                                          className="form-control"
-                                          id="basicpill-cstno-input72"
-                                          placeholder="Enter Your CST No." />
-                                      </FormGroup>
-                                    </Col>
-
-                                    <Col lg="6">
-                                      <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-servicetax-input82">
-                                          Service Tax No.
-                                        </Label>
-                                        <Input
-                                          type="text"
-                                          className="form-control"
-                                          id="basicpill-servicetax-input82"
-                                          placeholder="Enter Your Service Tax No." />
-                                      </FormGroup>
-                                    </Col>
-                                  </Row>
-                                  <Row>
-                                    <Col lg="6">
-                                      <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-companyuin-input92">
-                                          Company UIN
-                                        </Label>
-                                        <Input
-                                          type="text"
-                                          className="form-control"
-                                          id="basicpill-companyuin-input92"
-                                          placeholder="Company UIN No." />
-                                      </FormGroup>
-                                    </Col>
-
-                                    <Col lg="6">
-                                      <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-declaration-input102">
-                                          Declaration
-                                        </Label>
-                                        <Input
-                                          type="text"
-                                          className="form-control"
-                                          id="basicpill-Declaration-input102"
-                                          placeholder="Declaration Details" />
-                                      </FormGroup>
-                                    </Col>
-                                  </Row>
-                                </Form>
-                              </div>
+                                   <TableContainer
+                                      columns={columns}
+                               data={data}
+                               isGlobalFilter={true}
+                               isAddOptions={false}
+                               customPageSize={10}
+                               isPagination={true}
+                               tableClass="align-middle table-nowrap table-check table"
+                               theadClass="table-light"
+                               paginationDiv="col-12"
+                               pagination="justify-content-center pagination pagination-rounded"
+                                  />
+                                </CardText>
+                              </Card>
                             </TabPane>
                             <TabPane tabId={3}>
                               <div>
@@ -1524,7 +1569,7 @@ function index() {
                             </TabPane>
                           </TabContent>
                         </div>
-                        <div className="actions clearfix">
+                        {/* <div className="actions clearfix">
                           <ul>
                             <li
                               className={activeTabVartical === 1
@@ -1553,7 +1598,7 @@ function index() {
                               </Link>
                             </li>
                           </ul>
-                        </div>
+                        </div> */}
                       </div>
                     </CardBody>
                   </Card>

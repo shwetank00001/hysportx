@@ -27,6 +27,7 @@ import PNotification from "pages/Public/Participater/Notification";
 
 // public 
 import Login from "../pages/Authentication/Login";
+import Landing from "../pages/Authentication/Landing"
 import Logout from "../pages/Authentication/Logout";
 import Register from "../pages/Authentication/Register";
 import ForgetPwd from "../pages/Authentication/ForgetPassword";
@@ -387,9 +388,13 @@ const clientRoutes = [
 
 ];
 
+var accessTokenObj = localStorage.getItem("_token")
+console.log(accessTokenObj)
+
 const publicRoutes = [
 
     { path: "/login", component: <Login /> },
+    { path: "/", component: <Landing/> },
     { path: "/logout", component: <Logout /> },
     { path: "/forgot-password", component: <ForgetPwd /> },
     { path: "/register", component: <Register /> },

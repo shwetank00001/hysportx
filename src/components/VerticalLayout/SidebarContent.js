@@ -151,32 +151,9 @@ const SidebarContent = props => {
                                     <span>{props.t("Dashboard")}</span>
                                 </Link>
                             </li>
-                            <li>
-                                <Link to="/admin/email-inbox">
-                                    <i className="bx bx-home-circle"></i>
-                                    <span>{props.t("Email")}</span>
-                                </Link>
-                            </li>
+
                           
-                            <li>
-                                <Link to="/admin/calender">
-                                    <i className="bx bx-home-circle"></i>
-                                    <span>{props.t("Calender")}</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/admin/chat">
-                                    <i className="bx bx-home-circle"></i>
-                                    <span>{props.t("Chat")}</span>
-                                </Link>
-                            </li>
-                           
-                            <li>
-                                <Link to="/admin/email-read">
-                                    <i className="bx bx-home-circle"></i>
-                                    <span>{props.t("Email Read")}</span>
-                                </Link>
-                            </li>
+            
                             <li>
                                 <Link to="/admin/HYSPORTX">
                                     <i className="bx bx-home-circle"></i>
@@ -190,12 +167,6 @@ const SidebarContent = props => {
                                 </Link>
                             </li>
                            
-                            <li>
-                                <Link to="/admin/email-read">
-                                    <i className="bx bx-calendar"></i>
-                                    <span>{props.t("Shortcut Hub")}</span>
-                                </Link>
-                            </li>
                         </ul>
                     }
 
@@ -275,10 +246,6 @@ const SidebarContent = props => {
                         </div>
                     }
                         <li>
-                            <Link to="/#" className="has-arrow ">
-                                <i className="bx bx-share-alt"></i>
-                                <span>{props.t("Multi Level")}</span>
-                            </Link>
                             <ul className="sub-menu">
                                 <li>
                                     <Link to="/#">{props.t("Level 1.1")}</Link>

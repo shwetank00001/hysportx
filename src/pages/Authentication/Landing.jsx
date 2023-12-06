@@ -34,6 +34,7 @@ const Landing = () => {
                     console.log(data)
                     // nav("/admin/dashboard")
                     nav("/login")
+                    return
                   } else {
                     localStorage.setItem("_token", "")
                   }

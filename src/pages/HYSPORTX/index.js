@@ -211,19 +211,22 @@ const data = [
     }
   ];
 
-  return ( 
+  return (
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumbs */}
           <Breadcrumb title="fwgames" breadcrumbItem="hyposports" />
 
-      {loading ? 
-      <><Spinner color='success'></Spinner><Spinner color='success'></Spinner></>
-      :
-         
-          <><Row>
-              {/* <Card>
+          {loading ? (
+            <>
+              <Spinner color="success"></Spinner>
+              <Spinner color="success"></Spinner>
+            </>
+          ) : (
+            <>
+              <Row>
+                {/* <Card>
           <CardBody>
             <CardTitle className="h4 mb-4">
               <h4>
@@ -231,7 +234,7 @@ const data = [
               </h4>
               </CardTitle> */}
 
-              {/* <Row>
+                {/* <Row>
       <Col md="4">
         <Nav pills className="flex-column">
          
@@ -741,334 +744,364 @@ const data = [
       </Col>
     </Row> */}
 
-              {/* </CardBody>
+                {/* </CardBody>
 </Card> */}
-              <Modal
-                isOpen={modal}
-                autoFocus={true}
-                centered={true}
-                toggle={() => {
-                  setmodal(!modal);
-                } }
-              >
-                <div className="modal-content">
-                  <ModalHeader
-                    toggle={() => {
-                      setmodal(!modal);
-                    } }
-                  >
-                    ADD Modality
-                  </ModalHeader>
-                  <ModalBody>
-                    <form>
-                      <div className="mb-3">
-                        <Input
-                          type="email"
-                          className="form-control"
-                          placeholder="New Modality" />
-                      </div>
-                    </form>
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button
-                      type="button"
-                      color="secondary"
-                      onClick={() => {
-                        setmodal(!modal);
-                      } }
+                <Modal
+                  isOpen={modal}
+                  autoFocus={true}
+                  centered={true}
+                  toggle={() => {
+                    setmodal(!modal)
+                  }}
+                >
+                  <div className="modal-content">
+                    <ModalHeader
+                      toggle={() => {
+                        setmodal(!modal)
+                      }}
                     >
-                      Cancel
-                    </Button>
-                    <Button type="button" color="primary" onClick={() => setmodal(!modal)}>
-                      ADD
-
-                    </Button>
-                  </ModalFooter>
-                </div>
-              </Modal>
-              <Modal
-                isOpen={modal1}
-                autoFocus={true}
-                centered={true}
-                toggle={() => {
-                  setmodal1(!modal1);
-                } }
-              >
-                <div className="modal-content">
-                  <ModalHeader
-                    toggle={() => {
-                      setmodal1(!modal1);
-                    } }
-                  >
-                    ADD Proformance Tag
-                  </ModalHeader>
-                  <ModalBody>
-                    <form>
-                      <div className="mb-3">
-                        <Input
-                          type="email"
-                          className="form-control"
-                          placeholder="New Modality" />
-                      </div>
-                    </form>
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button
-                      type="button"
-                      color="secondary"
-                      onClick={() => {
-                        setmodal1(!modal1);
-                      } }
-                    >
-                      Cancel
-                    </Button>
-                    <Button type="button" color="primary" onClick={() => setmodal1(!modal1)}>
-                      ADD
-
-                    </Button>
-                  </ModalFooter>
-                </div>
-              </Modal>
-              <Modal
-                isOpen={modal2}
-                autoFocus={true}
-                centered={true}
-                toggle={() => {
-                  setmodal2(!modal2);
-                } }
-              >
-                <div className="modal-content">
-                  <ModalHeader
-                    toggle={() => {
-                      setmodal2(!modal2);
-                    } }
-                  >
-                    ADD Difficulty Level
-                  </ModalHeader>
-                  <ModalBody>
-                    <form>
-                      <div className="mb-3">
-                        <Input
-                          type="email"
-                          className="form-control"
-                          placeholder="New Modality" />
-                      </div>
-                    </form>
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button
-                      type="button"
-                      color="secondary"
-                      onClick={() => {
-                        setmodal2(!modal2);
-                      } }
-                    >
-                      Cancel
-                    </Button>
-                    <Button type="button" color="primary" onClick={() => setmodal2(!modal2)}>
-                      ADD
-
-                    </Button>
-                  </ModalFooter>
-                </div>
-              </Modal>
-              <Modal
-                isOpen={modal3}
-                autoFocus={true}
-                centered={true}
-                toggle={() => {
-                  setmodal3(!modal3);
-                } }
-              >
-                <div className="modal-content">
-                  <ModalHeader
-                    toggle={() => {
-                      setmodal3(!modal3);
-                    } }
-                  >
-                    ADD New Equipment
-                  </ModalHeader>
-                  <ModalBody>
-                    <form>
-                      <div className="mb-3">
-                        <Input
-                          type="email"
-                          className="form-control"
-                          placeholder="New Modality" />
-                      </div>
-                    </form>
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button
-                      type="button"
-                      color="secondary"
-                      onClick={() => {
-                        setmodal3(!modal3);
-                      } }
-                    >
-                      Cancel
-                    </Button>
-                    <Button type="button" color="primary" onClick={() => setmodal3(!modal3)}>
-                      ADD
-
-                    </Button>
-                  </ModalFooter>
-                </div>
-              </Modal>
-              <Modal
-                isOpen={modal4}
-                autoFocus={true}
-                centered={true}
-                toggle={() => {
-                  setmodal4(!modal4);
-                } }
-              >
-                <div className="modal-content">
-                  <ModalHeader
-                    toggle={() => {
-                      setmodal4(!modal4);
-                    } }
-                  >
-                    New  Muscle Used
-                  </ModalHeader>
-                  <ModalBody>
-                    <form>
-                      <div className="mb-3">
-                        <Input
-                          type="email"
-                          className="form-control"
-                          placeholder="New Modality" />
-                      </div>
-                    </form>
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button
-                      type="button"
-                      color="secondary"
-                      onClick={() => {
-                        setmodal4(!modal4);
-                      } }
-                    >
-                      Cancel
-                    </Button>
-                    <Button type="button" color="primary" onClick={() => setmodal4(!modal4)}>
-                      ADD
-
-                    </Button>
-                  </ModalFooter>
-                </div>
-              </Modal>
-              <Modal
-                isOpen={modal5}
-                autoFocus={true}
-                centered={true}
-                toggle={() => {
-                  setmodal5(!modal5);
-                } }
-              >
-                <div className="modal-content">
-                  <ModalHeader
-                    toggle={() => {
-                      setmodal5(!modal5);
-                    } }
-                  >
-                    ADD Benifits
-                  </ModalHeader>
-                  <ModalBody>
-                    <form>
-                      <div className="mb-3">
-                        <Input
-                          type="email"
-                          className="form-control"
-                          placeholder="New Modality" />
-                      </div>
-                    </form>
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button
-                      type="button"
-                      color="secondary"
-                      onClick={() => {
-                        setmodal5(!modal5);
-                      } }
-                    >
-                      Cancel
-                    </Button>
-                    <Button type="button" color="primary" onClick={() => setmodal5(!modal5)}>
-                      ADD
-
-                    </Button>
-                  </ModalFooter>
-                </div>
-              </Modal>
-              <Modal
-                isOpen={modal6}
-                autoFocus={true}
-                centered={true}
-                toggle={() => {
-                  setmodal6(!modal6);
-                } }
-              >
-                <div className="modal-content">
-                  <ModalHeader
-                    toggle={() => {
-                      setmodal6(!modal6);
-                    } }
-                  >
-                    Manage Shortcut
-                  </ModalHeader>
-                  <ModalBody>
-                    <form>
-                      <div className="mb-3">
-                        <Input
-                          type="email"
-                          className="form-control"
-                          placeholder="Short Name" />
-                      </div>
-                      <div className="mb-3">
-                        <Input
-                          type="email"
-                          className="form-control"
-                          placeholder="Term Name" />
-                      </div>
-                      <div className="mb-3">
-                        <Input
-                          type="email"
-                          className="form-control"
-                          placeholder="Description" />
-                      </div>
-                    </form>
-                  </ModalBody>
-                  <ModalFooter className=''>
-                    <Col className='text-center'>
-                    <Button
-                      type="button"
-                      className='col-sm-12 btn-soft-secondary'
-                      color="secondary"
-                      onClick={() => {
-                        setmodal6(!modal6);
-                      } }
+                      ADD Modality
+                    </ModalHeader>
+                    <ModalBody>
+                      <form>
+                        <div className="mb-3">
+                          <Input
+                            type="email"
+                            className="form-control"
+                            placeholder="New Modality"
+                          />
+                        </div>
+                      </form>
+                    </ModalBody>
+                    <ModalFooter>
+                      <Button
+                        type="button"
+                        color="secondary"
+                        onClick={() => {
+                          setmodal(!modal)
+                        }}
                       >
-                      Cancel
-                    </Button>
+                        Cancel
+                      </Button>
+                      <Button
+                        type="button"
+                        color="primary"
+                        onClick={() => setmodal(!modal)}
+                      >
+                        ADD
+                      </Button>
+                    </ModalFooter>
+                  </div>
+                </Modal>
+                <Modal
+                  isOpen={modal1}
+                  autoFocus={true}
+                  centered={true}
+                  toggle={() => {
+                    setmodal1(!modal1)
+                  }}
+                >
+                  <div className="modal-content">
+                    <ModalHeader
+                      toggle={() => {
+                        setmodal1(!modal1)
+                      }}
+                    >
+                      ADD Proformance Tag
+                    </ModalHeader>
+                    <ModalBody>
+                      <form>
+                        <div className="mb-3">
+                          <Input
+                            type="email"
+                            className="form-control"
+                            placeholder="New Modality"
+                          />
+                        </div>
+                      </form>
+                    </ModalBody>
+                    <ModalFooter>
+                      <Button
+                        type="button"
+                        color="secondary"
+                        onClick={() => {
+                          setmodal1(!modal1)
+                        }}
+                      >
+                        Cancel
+                      </Button>
+                      <Button
+                        type="button"
+                        color="primary"
+                        onClick={() => setmodal1(!modal1)}
+                      >
+                        ADD
+                      </Button>
+                    </ModalFooter>
+                  </div>
+                </Modal>
+                <Modal
+                  isOpen={modal2}
+                  autoFocus={true}
+                  centered={true}
+                  toggle={() => {
+                    setmodal2(!modal2)
+                  }}
+                >
+                  <div className="modal-content">
+                    <ModalHeader
+                      toggle={() => {
+                        setmodal2(!modal2)
+                      }}
+                    >
+                      ADD Difficulty Level
+                    </ModalHeader>
+                    <ModalBody>
+                      <form>
+                        <div className="mb-3">
+                          <Input
+                            type="email"
+                            className="form-control"
+                            placeholder="New Modality"
+                          />
+                        </div>
+                      </form>
+                    </ModalBody>
+                    <ModalFooter>
+                      <Button
+                        type="button"
+                        color="secondary"
+                        onClick={() => {
+                          setmodal2(!modal2)
+                        }}
+                      >
+                        Cancel
+                      </Button>
+                      <Button
+                        type="button"
+                        color="primary"
+                        onClick={() => setmodal2(!modal2)}
+                      >
+                        ADD
+                      </Button>
+                    </ModalFooter>
+                  </div>
+                </Modal>
+                <Modal
+                  isOpen={modal3}
+                  autoFocus={true}
+                  centered={true}
+                  toggle={() => {
+                    setmodal3(!modal3)
+                  }}
+                >
+                  <div className="modal-content">
+                    <ModalHeader
+                      toggle={() => {
+                        setmodal3(!modal3)
+                      }}
+                    >
+                      ADD New Equipment
+                    </ModalHeader>
+                    <ModalBody>
+                      <form>
+                        <div className="mb-3">
+                          <Input
+                            type="email"
+                            className="form-control"
+                            placeholder="New Modality"
+                          />
+                        </div>
+                      </form>
+                    </ModalBody>
+                    <ModalFooter>
+                      <Button
+                        type="button"
+                        color="secondary"
+                        onClick={() => {
+                          setmodal3(!modal3)
+                        }}
+                      >
+                        Cancel
+                      </Button>
+                      <Button
+                        type="button"
+                        color="primary"
+                        onClick={() => setmodal3(!modal3)}
+                      >
+                        ADD
+                      </Button>
+                    </ModalFooter>
+                  </div>
+                </Modal>
+                <Modal
+                  isOpen={modal4}
+                  autoFocus={true}
+                  centered={true}
+                  toggle={() => {
+                    setmodal4(!modal4)
+                  }}
+                >
+                  <div className="modal-content">
+                    <ModalHeader
+                      toggle={() => {
+                        setmodal4(!modal4)
+                      }}
+                    >
+                      New Muscle Used
+                    </ModalHeader>
+                    <ModalBody>
+                      <form>
+                        <div className="mb-3">
+                          <Input
+                            type="email"
+                            className="form-control"
+                            placeholder="New Modality"
+                          />
+                        </div>
+                      </form>
+                    </ModalBody>
+                    <ModalFooter>
+                      <Button
+                        type="button"
+                        color="secondary"
+                        onClick={() => {
+                          setmodal4(!modal4)
+                        }}
+                      >
+                        Cancel
+                      </Button>
+                      <Button
+                        type="button"
+                        color="primary"
+                        onClick={() => setmodal4(!modal4)}
+                      >
+                        ADD
+                      </Button>
+                    </ModalFooter>
+                  </div>
+                </Modal>
+                <Modal
+                  isOpen={modal5}
+                  autoFocus={true}
+                  centered={true}
+                  toggle={() => {
+                    setmodal5(!modal5)
+                  }}
+                >
+                  <div className="modal-content">
+                    <ModalHeader
+                      toggle={() => {
+                        setmodal5(!modal5)
+                      }}
+                    >
+                      ADD Benifits
+                    </ModalHeader>
+                    <ModalBody>
+                      <form>
+                        <div className="mb-3">
+                          <Input
+                            type="email"
+                            className="form-control"
+                            placeholder="New Modality"
+                          />
+                        </div>
+                      </form>
+                    </ModalBody>
+                    <ModalFooter>
+                      <Button
+                        type="button"
+                        color="secondary"
+                        onClick={() => {
+                          setmodal5(!modal5)
+                        }}
+                      >
+                        Cancel
+                      </Button>
+                      <Button
+                        type="button"
+                        color="primary"
+                        onClick={() => setmodal5(!modal5)}
+                      >
+                        ADD
+                      </Button>
+                    </ModalFooter>
+                  </div>
+                </Modal>
+                <Modal
+                  isOpen={modal6}
+                  autoFocus={true}
+                  centered={true}
+                  toggle={() => {
+                    setmodal6(!modal6)
+                  }}
+                >
+                  <div className="modal-content">
+                    <ModalHeader
+                      toggle={() => {
+                        setmodal6(!modal6)
+                      }}
+                    >
+                      Manage Shortcut
+                    </ModalHeader>
+                    <ModalBody>
+                      <form>
+                        <div className="mb-3">
+                          <Input
+                            type="email"
+                            className="form-control"
+                            placeholder="Short Name"
+                          />
+                        </div>
+                        <div className="mb-3">
+                          <Input
+                            type="email"
+                            className="form-control"
+                            placeholder="Term Name"
+                          />
+                        </div>
+                        <div className="mb-3">
+                          <Input
+                            type="email"
+                            className="form-control"
+                            placeholder="Description"
+                          />
+                        </div>
+                      </form>
+                    </ModalBody>
+                    <ModalFooter className="">
+                      <Col className="text-center">
+                        <Button
+                          type="button"
+                          className="col-sm-12 btn-soft-secondary"
+                          color="secondary"
+                          onClick={() => {
+                            setmodal6(!modal6)
+                          }}
+                        >
+                          Cancel
+                        </Button>
                       </Col>
-                      <Col className='text-center'>
-                    <Button className='col-sm-12 btn-soft-info' type="button" color="primary" onClick={() => setmodal6(!modal6)}>
-                      ADD
-
-                    </Button>
+                      <Col className="text-center">
+                        <Button
+                          className="col-sm-12 btn-soft-info"
+                          type="button"
+                          color="primary"
+                          onClick={() => setmodal6(!modal6)}
+                        >
+                          ADD
+                        </Button>
                       </Col>
-                  </ModalFooter>
-                </div>
-              </Modal>
-            </Row><Row>
+                    </ModalFooter>
+                  </div>
+                </Modal>
+              </Row>
+              <Row>
                 <Col lg="12">
                   <Card>
                     <CardBody>
                       <CardTitle className="h4 mb-4">
-                        <h4>
-                          HYSPORTX CREATE
-                        </h4>
+                        <h4>HYSPORTX CREATE</h4>
                       </CardTitle>
                       <div className="vertical-wizard wizard clearfix vertical">
                         <div className="steps clearfix ">
@@ -1083,13 +1116,11 @@ const data = [
                                   active: activeTabVartical === 1,
                                 })}
                                 onClick={() => {
-                                  toggleTabVertical(1);
-                                } }
-
-
+                                  toggleTabVertical(1)
+                                }}
                               >
                                 <span className="number">1.</span>
-                                <span className='font-size-10'>
+                                <span className="font-size-10">
                                   CREATE HYSPORTX EXERCISE
                                 </span>
                               </NavLink>
@@ -1104,11 +1135,13 @@ const data = [
                                   active: activeTabVartical === 2,
                                 })}
                                 onClick={() => {
-                                  toggleTabVertical(2);
-                                } }
+                                  toggleTabVertical(2)
+                                }}
                               >
                                 <span className="number">2.</span>{" "}
-                                <span className='font-size-10'>CREATE HYSPORTX CONDITIONS</span>
+                                <span className="font-size-10">
+                                  CREATE HYSPORTX CONDITIONS
+                                </span>
                               </NavLink>
                             </NavItem>
                             <NavItem
@@ -1117,16 +1150,18 @@ const data = [
                               })}
                             >
                               <NavLink
-                                className={(classNames({
-                                  active: activeTabVartical === 3,
-                                }),
-                                  "done")}
+                                className={
+                                  (classNames({
+                                    active: activeTabVartical === 3,
+                                  }),
+                                  "done")
+                                }
                                 onClick={() => {
-                                  toggleTabVertical(3);
-                                } }
+                                  toggleTabVertical(3)
+                                }}
                               >
                                 <span className="number">3.</span>
-                                <span className='font-size-10'>
+                                <span className="font-size-10">
                                   CREATE HYSPORTX ACTIVITIES
                                 </span>
                               </NavLink>
@@ -1137,16 +1172,18 @@ const data = [
                               })}
                             >
                               <NavLink
-                                className={(classNames({
-                                  active: activeTabVartical === 4,
-                                }),
-                                  "done")}
+                                className={
+                                  (classNames({
+                                    active: activeTabVartical === 4,
+                                  }),
+                                  "done")
+                                }
                                 onClick={() => {
-                                  toggleTabVertical(4);
-                                } }
+                                  toggleTabVertical(4)
+                                }}
                               >
                                 <span className="number">4.</span>
-                                <span className='font-size-10'>
+                                <span className="font-size-10">
                                   Create HYSPORTX EVENT
                                 </span>
                               </NavLink>
@@ -1157,16 +1194,18 @@ const data = [
                               })}
                             >
                               <NavLink
-                                className={(classNames({
-                                  active: activeTabVartical === 5,
-                                }),
-                                  "done")}
+                                className={
+                                  (classNames({
+                                    active: activeTabVartical === 5,
+                                  }),
+                                  "done")
+                                }
                                 onClick={() => {
-                                  toggleTabVertical(5);
-                                } }
+                                  toggleTabVertical(5)
+                                }}
                               >
                                 <span className="number">5.</span>
-                                <span className='font-size-10'>
+                                <span className="font-size-10">
                                   Assign HYSPORTX EVENT
                                 </span>
                               </NavLink>
@@ -1177,16 +1216,18 @@ const data = [
                               })}
                             >
                               <NavLink
-                                className={(classNames({
-                                  active: activeTabVartical === 6,
-                                }),
-                                  "done")}
+                                className={
+                                  (classNames({
+                                    active: activeTabVartical === 6,
+                                  }),
+                                  "done")
+                                }
                                 onClick={() => {
-                                  toggleTabVertical(6);
-                                } }
+                                  toggleTabVertical(6)
+                                }}
                               >
                                 <span className="number">6.</span>
-                                <span className='font-size-10'>
+                                <span className="font-size-10">
                                   SHARE & CONNECTIONS
                                 </span>
                               </NavLink>
@@ -1211,13 +1252,13 @@ const data = [
                                         HSX Exercise Name :
                                       </Label>
                                       <Col sm={8}>
-                                        <Row className='col-sm-12'>
-
+                                        <Row className="col-sm-12">
                                           <Input
                                             type="text"
                                             className="form-control px-0 "
                                             id="horizontal-firstname-Input"
-                                            placeholder="Enter Your" />
+                                            placeholder="Enter Your"
+                                          />
                                         </Row>
                                       </Col>
                                     </Row>
@@ -1229,17 +1270,26 @@ const data = [
                                         Modality :
                                       </Label>
                                       <Col sm={8}>
-                                        <Row className='input-group'>
-
+                                        <Row className="input-group">
                                           <Select
                                             value={selectedMulti}
                                             isMulti={true}
                                             onChange={() => {
-                                              handleMulti();
-                                            } }
+                                              handleMulti()
+                                            }}
                                             options={modality}
-                                            className="select2-selection col-sm-10 p-0" />
-                                          <button onClick={() => { setmodal(!modal); } } className="btn btn-primary col-sm-2  m-0 px-1 font-size-12" type="button" id="inputGroupFileAddon03">+ ADD</button>
+                                            className="select2-selection col-sm-10 p-0"
+                                          />
+                                          <button
+                                            onClick={() => {
+                                              setmodal(!modal)
+                                            }}
+                                            className="btn btn-primary col-sm-2  m-0 px-1 font-size-12"
+                                            type="button"
+                                            id="inputGroupFileAddon03"
+                                          >
+                                            + ADD
+                                          </button>
                                         </Row>
                                       </Col>
                                     </Row>
@@ -1251,17 +1301,26 @@ const data = [
                                         Performance Tag :
                                       </Label>
                                       <Col sm={8}>
-                                        <Row className='input-group'>
-
+                                        <Row className="input-group">
                                           <Select
                                             value={selectedMulti}
                                             isMulti={true}
                                             onChange={() => {
-                                              handleMulti();
-                                            } }
+                                              handleMulti()
+                                            }}
                                             options={performncetag}
-                                            className="select2-selection col-sm-10 p-0" />
-                                          <button className="btn btn-primary col-sm-2  m-0 px-1 font-size-12" onClick={() => { setmodal1(!modal1); } } type="button" id="inputGroupFileAddon03">+ ADD</button>
+                                            className="select2-selection col-sm-10 p-0"
+                                          />
+                                          <button
+                                            className="btn btn-primary col-sm-2  m-0 px-1 font-size-12"
+                                            onClick={() => {
+                                              setmodal1(!modal1)
+                                            }}
+                                            type="button"
+                                            id="inputGroupFileAddon03"
+                                          >
+                                            + ADD
+                                          </button>
                                         </Row>
                                       </Col>
                                     </Row>
@@ -1273,17 +1332,26 @@ const data = [
                                         Difficulty Level :
                                       </Label>
                                       <Col sm={8}>
-                                        <Row className='input-group'>
-
+                                        <Row className="input-group">
                                           <Select
                                             value={selectedMulti}
                                             isMulti={true}
                                             onChange={() => {
-                                              handleMulti();
-                                            } }
+                                              handleMulti()
+                                            }}
                                             options={level}
-                                            className="select2-selection col-sm-10 p-0" />
-                                          <button onClick={() => { setmodal2(!modal2); } } className="btn btn-primary col-sm-2  m-0 px-1 font-size-12" type="button" id="inputGroupFileAddon03">+ ADD</button>
+                                            className="select2-selection col-sm-10 p-0"
+                                          />
+                                          <button
+                                            onClick={() => {
+                                              setmodal2(!modal2)
+                                            }}
+                                            className="btn btn-primary col-sm-2  m-0 px-1 font-size-12"
+                                            type="button"
+                                            id="inputGroupFileAddon03"
+                                          >
+                                            + ADD
+                                          </button>
                                         </Row>
                                       </Col>
                                     </Row>
@@ -1295,17 +1363,26 @@ const data = [
                                         Equipment :
                                       </Label>
                                       <Col sm={8}>
-                                        <Row className='input-group'>
-
+                                        <Row className="input-group">
                                           <Select
                                             value={selectedMulti}
                                             isMulti={true}
                                             onChange={() => {
-                                              handleMulti();
-                                            } }
+                                              handleMulti()
+                                            }}
                                             options={equipment}
-                                            className="select2-selection col-sm-10 p-0" />
-                                          <button onClick={() => { setmodal3(!modal3); } } className="btn btn-primary col-sm-2  m-0 px-1 font-size-12" type="button" id="inputGroupFileAddon03">+ ADD</button>
+                                            className="select2-selection col-sm-10 p-0"
+                                          />
+                                          <button
+                                            onClick={() => {
+                                              setmodal3(!modal3)
+                                            }}
+                                            className="btn btn-primary col-sm-2  m-0 px-1 font-size-12"
+                                            type="button"
+                                            id="inputGroupFileAddon03"
+                                          >
+                                            + ADD
+                                          </button>
                                         </Row>
                                       </Col>
                                     </Row>
@@ -1317,17 +1394,26 @@ const data = [
                                         Muscle Used :
                                       </Label>
                                       <Col sm={8}>
-                                        <Row className='input-group'>
-
+                                        <Row className="input-group">
                                           <Select
                                             value={selectedMulti}
                                             isMulti={true}
                                             onChange={() => {
-                                              handleMulti();
-                                            } }
+                                              handleMulti()
+                                            }}
                                             options={modality}
-                                            className="select2-selection m-0 p-0 col-sm-10" />
-                                          <button onClick={() => { setmodal4(!modal4); } } className="btn btn-primary col-sm-2  m-0 px-1 font-size-12" type="button" id="inputGroupFileAddon03">+ ADD</button>
+                                            className="select2-selection m-0 p-0 col-sm-10"
+                                          />
+                                          <button
+                                            onClick={() => {
+                                              setmodal4(!modal4)
+                                            }}
+                                            className="btn btn-primary col-sm-2  m-0 px-1 font-size-12"
+                                            type="button"
+                                            id="inputGroupFileAddon03"
+                                          >
+                                            + ADD
+                                          </button>
                                         </Row>
                                       </Col>
                                     </Row>
@@ -1338,21 +1424,31 @@ const data = [
                                       >
                                         Benefits :
                                       </Label>
-                                      <Col className='' sm={8}>
-                                        <Row className='input-group'>
+                                      <Col className="" sm={8}>
+                                        <Row className="input-group">
                                           {/* <Col className='m-0 p-0' sm={10}> */}
                                           <Select
                                             value={selectedMulti}
                                             isMulti={true}
                                             onChange={() => {
-                                              handleMulti();
-                                            } }
+                                              handleMulti()
+                                            }}
                                             options={modality}
-                                            className="select2-selection m-0 p-0 col-sm-10" />
+                                            className="select2-selection m-0 p-0 col-sm-10"
+                                          />
 
                                           {/* </Col> */}
                                           {/* <Col className='m-0 p-0 ' sm={2}> */}
-                                          <button onClick={() => { setmodal5(!modal5); } } className="btn btn-primary col-sm-2  m-0 px-1 font-size-12" type="button" id="inputGroupFileAddon03">+ ADD</button>
+                                          <button
+                                            onClick={() => {
+                                              setmodal5(!modal5)
+                                            }}
+                                            className="btn btn-primary col-sm-2  m-0 px-1 font-size-12"
+                                            type="button"
+                                            id="inputGroupFileAddon03"
+                                          >
+                                            + ADD
+                                          </button>
                                           {/* </Col> */}
                                         </Row>
                                       </Col>
@@ -1366,13 +1462,14 @@ const data = [
                                         Exercise Descripon :
                                       </Label>
                                       <Col sm={8}>
-                                        <Row className='col-sm-12'>
+                                        <Row className="col-sm-12">
                                           <textarea
                                             rows={6}
                                             type="password"
                                             autoComplete="off"
                                             className="form-control"
-                                            id="horizontal-password-Input" />
+                                            id="horizontal-password-Input"
+                                          />
                                         </Row>
                                       </Col>
                                     </Row>
@@ -1384,35 +1481,44 @@ const data = [
                                         Image Upload/Link :
                                       </Label>
                                       <Col sm={8}>
-                                        <Row className='col-sm-12'>
-
+                                        <Row className="col-sm-12">
                                           <Select
                                             value={selectedMulti}
                                             isMulti={true}
                                             onChange={() => {
-                                              handleMulti();
-                                            } }
+                                              handleMulti()
+                                            }}
                                             options={modality}
-                                            className="select2-selection p-0" />
+                                            className="select2-selection p-0"
+                                          />
 
-                                          <Row className='my-2 p-0'>
+                                          <Row className="my-2 p-0">
                                             <Col>
-                                              <Row className='text-center'>
-                                                <Col className='font-size-12 m-0 p-0'><h6>Upload Image </h6></Col>
-                                                <Col className='font-size-10'><Button className='font-size-10 m-0 p-0'>+ ADD MORE</Button></Col>
+                                              <Row className="text-center">
+                                                <Col className="font-size-12 m-0 p-0">
+                                                  <h6>Upload Image </h6>
+                                                </Col>
+                                                <Col className="font-size-10">
+                                                  <Button className="font-size-10 m-0 p-0">
+                                                    + ADD MORE
+                                                  </Button>
+                                                </Col>
                                               </Row>
                                             </Col>
                                             <Col>
-                                              <Row className='text-center'>
-                                                <Col><Button className='btn-soft-primary font-size-11 m-0 p-0'>
-                                                  <div>+</div>
-                                                  <span>ADD MORE</span>
-                                                </Button></Col>
-                                                <Col className='font-size-10'>Upload Image </Col>
+                                              <Row className="text-center">
+                                                <Col>
+                                                  <Button className="btn-soft-primary font-size-11 m-0 p-0">
+                                                    <div>+</div>
+                                                    <span>ADD MORE</span>
+                                                  </Button>
+                                                </Col>
+                                                <Col className="font-size-10">
+                                                  Upload Image{" "}
+                                                </Col>
                                               </Row>
                                             </Col>
                                           </Row>
-
                                         </Row>
                                       </Col>
                                     </Row>
@@ -1424,13 +1530,13 @@ const data = [
                                         Video Link :
                                       </Label>
                                       <Col sm={8}>
-                                        <Row className='col-sm-12'>
-
+                                        <Row className="col-sm-12">
                                           <Input
                                             type="password"
                                             autoComplete="off"
                                             className="form-control px-0"
-                                            id="horizontal-password-Input" />
+                                            id="horizontal-password-Input"
+                                          />
                                         </Row>
                                       </Col>
                                     </Row>
@@ -1452,103 +1558,226 @@ const data = [
                                 </CardBody>
                               </Card>
                             </TabPane>
+
                             <TabPane tabId={2}>
                               <Card>
-                                <CardTitle className='d-flex'>
+                                <CardTitle className="d-flex">
                                   <Col sm={6}>Hypersports Conditions</Col>
-                                  <Col sm={6} onClick={()=>setmodal6(!modal6)} className='text-end'><Button color='secondary'>+ Add New</Button></Col>
+                                  <Col
+                                    sm={6}
+                                    onClick={() => setmodal6(!modal6)}
+                                    className="text-end"
+                                  >
+                                    <Button color="secondary">+ Add New</Button>
+                                  </Col>
                                 </CardTitle>
                                 <CardText>
-
-                                   <TableContainer
-                                      columns={columns}
-                               data={data}
-                               isGlobalFilter={true}
-                               isAddOptions={false}
-                               customPageSize={10}
-                               isPagination={true}
-                               tableClass="align-middle table-nowrap table-check table"
-                               theadClass="table-light"
-                               paginationDiv="col-12"
-                               pagination="justify-content-center pagination pagination-rounded"
+                                  <TableContainer
+                                    columns={columns}
+                                    data={data}
+                                    isGlobalFilter={true}
+                                    isAddOptions={false}
+                                    customPageSize={10}
+                                    isPagination={true}
+                                    tableClass="align-middle table-nowrap table-check table"
+                                    theadClass="table-light"
+                                    paginationDiv="col-12"
+                                    pagination="justify-content-center pagination pagination-rounded"
                                   />
                                 </CardText>
                               </Card>
                             </TabPane>
+
                             <TabPane tabId={3}>
                               <div>
                                 <Form>
                                   <Row>
-                                    <Col lg="6">
+                                    <div>
+                                      <Col lg="4">
+                                        <FormGroup className="mb-3">
+                                          <Label htmlFor="basicpill-namecard-input112">
+                                            Create Activities
+                                          </Label>
+                                          <Input
+                                            type="text"
+                                            className="form-control"
+                                            id="basicpill-namecard-input112"
+                                            placeholder="Activity Heading Name"
+                                          />
+                                        </FormGroup>
+                                      </Col>
+                                    </div>
+                                  </Row>
+                                  <Row>
+                                    <Col lg="2">
                                       <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-namecard-input112">
-                                          Name on Card
-                                        </Label>
+                                        <Label htmlFor="basicpill-namecard-Condition"></Label>
                                         <Input
                                           type="text"
                                           className="form-control"
-                                          id="basicpill-namecard-input112"
-                                          placeholder="Enter Your Name on Card" />
+                                          id="basicpill-namecard-Condition"
+                                          placeholder="Select Condition"
+                                        />
                                       </FormGroup>
                                     </Col>
-
-                                    <Col lg="6">
+                                    <Col lg="3">
                                       <FormGroup className="mb-3">
-                                        <Label>Credit Card Type</Label>
-                                        <select className="form-select">
-                                          <option>Select Card Type</option>
-                                          <option>American Express</option>
-                                          <option>Visa</option>
-                                          <option>MasterCard</option>
-                                          <option>Discover</option>
-                                        </select>
+                                        <Label htmlFor="basicpill-namecard-Performance"></Label>
+                                        <Input
+                                          type="text"
+                                          className="form-control"
+                                          id="basicpill-namecard-Performance"
+                                          placeholder="Create Performance Tage"
+                                        />
+                                      </FormGroup>
+                                    </Col>
+                                    <Col lg="4">
+                                      <FormGroup className="mb-3">
+                                        <Label htmlFor="basicpill-namecard-Performance"></Label>
+                                        <Input
+                                          type="text"
+                                          className="form-control"
+                                          id="basicpill-namecard-Performance"
+                                          placeholder=""
+                                        />
                                       </FormGroup>
                                     </Col>
                                   </Row>
-                                  <Row>
-                                    <Col lg="6">
-                                      <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-cardno-input122">
-                                          Credit Card Number
-                                        </Label>
-                                        <Input
-                                          type="text"
-                                          className="form-control"
-                                          id="basicpill-cardno-input122"
-                                          placeholder="Enter Your Card Number" />
-                                      </FormGroup>
-                                    </Col>
 
-                                    <Col lg="6">
-                                      <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-card-verification-input">
-                                          Card Verification Number
-                                        </Label>
-                                        <Input
-                                          type="text"
-                                          className="form-control"
-                                          id="basicpill-card-verification-input"
-                                          placeholder="Card Verification Number" />
-                                      </FormGroup>
-                                    </Col>
-                                  </Row>
                                   <Row>
-                                    <Col lg="6">
+                                    <Col lg="1">
                                       <FormGroup className="mb-3">
                                         <Label htmlFor="basicpill-expiration-input132">
-                                          Expiration Date
+                                          Reps
                                         </Label>
                                         <Input
                                           type="text"
                                           className="form-control"
                                           id="basicpill-expiration-input132"
-                                          placeholder="Card Expiration Date" />
+                                          placeholder="Reps"
+                                        />
+                                      </FormGroup>
+                                    </Col>
+
+                                    <Col lg="2">
+                                      <FormGroup className="mb-3">
+                                        <Label htmlFor="basicpill-expiration-input132">
+                                          Exercise Select
+                                        </Label>
+                                        <Input
+                                          type="text"
+                                          className="form-control"
+                                          id="basicpill-expiration-input132"
+                                          placeholder="Exercise Select
+"
+                                        />
+                                      </FormGroup>
+                                    </Col>
+
+                                    <Col lg="2">
+                                      <FormGroup className="mb-3">
+                                        <Label htmlFor="basicpill-expiration-input132">
+                                          Performance Tag
+                                        </Label>
+                                        <Input
+                                          type="text"
+                                          className="form-control"
+                                          id="basicpill-expiration-input132"
+                                          placeholder="Performance Tag"
+                                        />
+                                      </FormGroup>
+                                    </Col>
+
+                                    <Col lg="3">
+                                      <FormGroup className="mb-3">
+                                        <Label htmlFor="basicpill-expiration-input132">
+                                          Comments Description
+                                        </Label>
+                                        <Input
+                                          type="text"
+                                          className="form-control"
+                                          id="basicpill-expiration-input132"
+                                          placeholder="Comments Description"
+                                        />
+                                      </FormGroup>
+                                    </Col>
+                                  </Row>
+                                  <Row>
+                                    <Col lg="1">
+                                      <FormGroup className="mb-3">
+                                        <Label htmlFor="basicpill-expiration-input132">
+                                          Reps
+                                        </Label>
+                                        <Input
+                                          type="text"
+                                          className="form-control"
+                                          id="basicpill-expiration-input132"
+                                          placeholder="Reps"
+                                        />
+                                      </FormGroup>
+                                    </Col>
+
+                                    <Col lg="2">
+                                      <FormGroup className="mb-3">
+                                        <Label htmlFor="basicpill-expiration-input132">
+                                          Exercise Select
+                                        </Label>
+                                        <Input
+                                          type="text"
+                                          className="form-control"
+                                          id="basicpill-expiration-input132"
+                                          placeholder="Exercise Select
+"
+                                        />
+                                      </FormGroup>
+                                    </Col>
+
+                                    <Col lg="2">
+                                      <FormGroup className="mb-3">
+                                        <Label htmlFor="basicpill-expiration-input132">
+                                          Performance Tag
+                                        </Label>
+                                        <Input
+                                          type="text"
+                                          className="form-control"
+                                          id="basicpill-expiration-input132"
+                                          placeholder="Performance Tag"
+                                        />
+                                      </FormGroup>
+                                    </Col>
+
+                                    <Col lg="3">
+                                      <FormGroup className="mb-3">
+                                        <Label htmlFor="basicpill-expiration-input132">
+                                          Comments Description
+                                        </Label>
+                                        <Input
+                                          type="text"
+                                          className="form-control"
+                                          id="basicpill-expiration-input132"
+                                          placeholder="Comments Description"
+                                        />
+                                      </FormGroup>
+                                    </Col>
+
+                                    <Col lg="6">
+                                      <FormGroup className="mb-3">
+                                        <Label htmlFor="basicpill-expiration-input132">
+                                          Overall Description
+                                        </Label>
+                                        <Input
+                                          type="text"
+                                          className="form-control"
+                                          id="basicpill-expiration-input132"
+                                          placeholder="Overall Description"
+                                        />
                                       </FormGroup>
                                     </Col>
                                   </Row>
                                 </Form>
                               </div>
                             </TabPane>
+
                             <TabPane tabId={4}>
                               <div className="row justify-content-center">
                                 <Col lg="6">
@@ -1559,8 +1788,8 @@ const data = [
                                     <div>
                                       <h5>Confirm Detail</h5>
                                       <p className="text-muted">
-                                        If several languages coalesce, the grammar
-                                        of the resulting
+                                        If several languages coalesce, the
+                                        grammar of the resulting
                                       </p>
                                     </div>
                                   </div>
@@ -1603,15 +1832,12 @@ const data = [
                     </CardBody>
                   </Card>
                 </Col>
-
-              </Row></>
-}
-
-        
+              </Row>
+            </>
+          )}
         </Container>
       </div>
-     </React.Fragment>
-   
+    </React.Fragment>
   )
 }
 

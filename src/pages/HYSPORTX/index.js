@@ -137,6 +137,24 @@ const columns = useMemo(
   []
 );
 
+  const [selectedGroup, setselectedGroup] = useState(null)
+
+  function handleSelectGroup(selectedGroup) {
+    setselectedGroup(selectedGroup)
+  }
+  const optionGroup = [
+    {
+      // label: "Picnic",
+      options: [
+        { label: "Distance", value: "Distance" },
+        { label: "Time", value: "Time" },
+        { label: "Lift", value: "Lift" },
+        { label: "Sets", value: "Sets" },
+        { label: "Reps", value: "Reps" },
+      ],
+    }
+  ]
+
 const data = [
   {  id:'1',
       name: "Jennifer Chang",
@@ -1620,18 +1638,22 @@ const data = [
                                         />
                                       </FormGroup>
                                     </Col>
-                                    <Col lg="3">
-                                      <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-namecard-Performance"></Label>
-                                        <Input
-                                          type="text"
-                                          className="form-control"
-                                          id="basicpill-namecard-Performance"
-                                          placeholder="Create Performance Tage"
+
+                                    <Col lg="1">
+                                      <div className="mb-3">
+                                        <Label></Label>
+                                        <Select
+                                          value={selectedGroup}
+                                          onChange={() => {
+                                            handleSelectGroup()
+                                          }}
+                                          options={optionGroup}
+                                          className="select2-selection"
                                         />
-                                      </FormGroup>
+                                      </div>
                                     </Col>
-                                    <Col lg="4">
+
+                                    <Col lg="1">
                                       <FormGroup className="mb-3">
                                         <Label htmlFor="basicpill-namecard-Performance"></Label>
                                         <Input
@@ -1642,14 +1664,25 @@ const data = [
                                         />
                                       </FormGroup>
                                     </Col>
+                                    <Col lg="1">
+                                      <div className="mb-3">
+                                        <Label></Label>
+                                        <Select
+                                          value={selectedGroup}
+                                          onChange={() => {
+                                            handleSelectGroup()
+                                          }}
+                                          options={optionGroup}
+                                          className="select2-selection"
+                                        />
+                                      </div>
+                                    </Col>
                                   </Row>
 
                                   <Row>
                                     <Col lg="1">
                                       <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-expiration-input132">
-                                          Reps
-                                        </Label>
+                                        <Label htmlFor="basicpill-expiration-input132"></Label>
                                         <Input
                                           type="text"
                                           className="form-control"
@@ -1661,9 +1694,7 @@ const data = [
 
                                     <Col lg="2">
                                       <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-expiration-input132">
-                                          Exercise Select
-                                        </Label>
+                                        <Label htmlFor="basicpill-expiration-input132"></Label>
                                         <Input
                                           type="text"
                                           className="form-control"
@@ -1674,25 +1705,48 @@ const data = [
                                       </FormGroup>
                                     </Col>
 
-                                    <Col lg="2">
+                                    <Col lg="1">
+                                      <div className="mb-3">
+                                        <Label></Label>
+                                        <Select
+                                          value={selectedGroup}
+                                          onChange={() => {
+                                            handleSelectGroup()
+                                          }}
+                                          options={optionGroup}
+                                          className="select2-selection"
+                                        />
+                                      </div>
+                                    </Col>
+
+                                    <Col lg="1">
                                       <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-expiration-input132">
-                                          Performance Tag
-                                        </Label>
+                                        <Label htmlFor="basicpill-namecard-Performance"></Label>
                                         <Input
                                           type="text"
                                           className="form-control"
-                                          id="basicpill-expiration-input132"
-                                          placeholder="Performance Tag"
+                                          id="basicpill-namecard-Performance"
+                                          placeholder=""
                                         />
                                       </FormGroup>
+                                    </Col>
+                                    <Col lg="1">
+                                      <div className="mb-3">
+                                        <Label></Label>
+                                        <Select
+                                          value={selectedGroup}
+                                          onChange={() => {
+                                            handleSelectGroup()
+                                          }}
+                                          options={optionGroup}
+                                          className="select2-selection"
+                                        />
+                                      </div>
                                     </Col>
 
                                     <Col lg="3">
                                       <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-expiration-input132">
-                                          Comments Description
-                                        </Label>
+                                        <Label htmlFor="basicpill-expiration-input132"></Label>
                                         <Input
                                           type="text"
                                           className="form-control"
@@ -1705,9 +1759,7 @@ const data = [
                                   <Row>
                                     <Col lg="1">
                                       <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-expiration-input132">
-                                          Reps
-                                        </Label>
+                                        <Label htmlFor="basicpill-expiration-input132"></Label>
                                         <Input
                                           type="text"
                                           className="form-control"
@@ -1719,9 +1771,7 @@ const data = [
 
                                     <Col lg="2">
                                       <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-expiration-input132">
-                                          Exercise Select
-                                        </Label>
+                                        <Label htmlFor="basicpill-expiration-input132"></Label>
                                         <Input
                                           type="text"
                                           className="form-control"
@@ -1732,25 +1782,48 @@ const data = [
                                       </FormGroup>
                                     </Col>
 
-                                    <Col lg="2">
+                                    <Col lg="1">
+                                      <div className="mb-3">
+                                        <Label></Label>
+                                        <Select
+                                          value={selectedGroup}
+                                          onChange={() => {
+                                            handleSelectGroup()
+                                          }}
+                                          options={optionGroup}
+                                          className="select2-selection"
+                                        />
+                                      </div>
+                                    </Col>
+
+                                    <Col lg="1">
                                       <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-expiration-input132">
-                                          Performance Tag
-                                        </Label>
+                                        <Label htmlFor="basicpill-namecard-Performance"></Label>
                                         <Input
                                           type="text"
                                           className="form-control"
-                                          id="basicpill-expiration-input132"
-                                          placeholder="Performance Tag"
+                                          id="basicpill-namecard-Performance"
+                                          placeholder=""
                                         />
                                       </FormGroup>
+                                    </Col>
+                                    <Col lg="1">
+                                      <div className="mb-3">
+                                        <Label></Label>
+                                        <Select
+                                          value={selectedGroup}
+                                          onChange={() => {
+                                            handleSelectGroup()
+                                          }}
+                                          options={optionGroup}
+                                          className="select2-selection"
+                                        />
+                                      </div>
                                     </Col>
 
                                     <Col lg="3">
                                       <FormGroup className="mb-3">
-                                        <Label htmlFor="basicpill-expiration-input132">
-                                          Comments Description
-                                        </Label>
+                                        <Label htmlFor="basicpill-expiration-input132"></Label>
                                         <Input
                                           type="text"
                                           className="form-control"
@@ -1772,6 +1845,73 @@ const data = [
                                           placeholder="Overall Description"
                                         />
                                       </FormGroup>
+                                    </Col>
+                                  </Row>
+                                  <Row>
+                                    <Col lg="2">
+                                      <div className="mb-3">
+                                        <Label>Competition Level </Label>
+                                        <Select
+                                          value={selectedGroup}
+                                          onChange={() => {
+                                            handleSelectGroup()
+                                          }}
+                                          options={optionGroup}
+                                          className="select2-selection"
+                                        />
+                                      </div>
+                                    </Col>
+                                    <Col lg="2">
+                                      <div className="mb-3">
+                                        <Label>Community For </Label>
+                                        <Select
+                                          value={selectedGroup}
+                                          onChange={() => {
+                                            handleSelectGroup()
+                                          }}
+                                          options={optionGroup}
+                                          className="select2-selection"
+                                        />
+                                      </div>
+                                    </Col>
+                                    <Col lg="2">
+                                      <div className="mb-3">
+                                        <Label>Gender</Label>
+                                        <Select
+                                          value={selectedGroup}
+                                          onChange={() => {
+                                            handleSelectGroup()
+                                          }}
+                                          options={optionGroup}
+                                          className="select2-selection"
+                                        />
+                                      </div>
+                                    </Col>
+                                    <Col lg="2">
+                                      <div className="mb-3">
+                                        <Label>Age Group</Label>
+                                        <Select
+                                          value={selectedGroup}
+                                          onChange={() => {
+                                            handleSelectGroup()
+                                          }}
+                                          options={optionGroup}
+                                          className="select2-selection"
+                                        />
+                                      </div>
+                                    </Col>
+                                    <Col lg="2">
+                                      <div className="mb-3">
+                                        <Label>Activity Target</Label>
+                                        <Select
+                                          value={selectedGroup}
+                                          onChange={() => {
+                                            handleSelectGroup()
+                                          }}
+                                          options={optionGroup}
+                                          className="select2-selection"
+                                        />
+                                      </div>
                                     </Col>
                                   </Row>
                                 </Form>
